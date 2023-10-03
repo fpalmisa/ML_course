@@ -19,11 +19,7 @@ def compute_loss(y, tx, w):
     # INSERT YOUR CODE HERE
     # TODO: compute loss by MSE
 
-    loss = 0
-    for n in range(len(y)):
-        MSE = y[n] - w[0] - w[1]*tx[n,1]
-        loss = loss + np.power(MSE,2)
-
-    loss = loss/(len(y))
+    e = y - tx @ w
+    loss = 1/(2*len(y))* np.linal.norm(e)**2
     return loss
     # ***************************************************

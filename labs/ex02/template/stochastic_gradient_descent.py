@@ -51,8 +51,13 @@ def stochastic_gradient_descent(y, tx, initial_w, batch_size, max_iters, gamma):
         # ***************************************************
         # INSERT YOUR CODE HERE
         # TODO: implement stochastic gradient descent.
-        # ***************************************************
-        raise NotImplementedError
+        
+        for minibatch_y, minibatch_tx in batch_iter(y, tx, batch_size):
+            loss = compute_loss(minibatch_y,minibatch_tx,w)
+            w = w - gamma*compute_stoch_gradient(minibatch_y,minibatch_tx,w)
+
+            ws.append(w)
+            losses.append(loss)
 
         print(
             "SGD iter. {bi}/{ti}: loss={l}, w0={w0}, w1={w1}".format(

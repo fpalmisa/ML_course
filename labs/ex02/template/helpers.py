@@ -27,8 +27,8 @@ def load_data(sub_sample=True, add_outlier=False):
 
     if add_outlier:
         # outlier experiment
-        height = np.concatenate([height, [1.1, 1.2]])
-        weight = np.concatenate([weight, [51.5 / 0.454, 55.3 / 0.454]])
+        height = np.concatenate([height, [1.1, 1.2, 1.3, 1.4, 1.5,1.6]])
+        weight = np.concatenate([weight, [51.5 / 0.454, 55.3 / 0.454, 65.3 / 0.454, 76 /0.454, 23 / 0.454, 98.98 / 0.454]])
 
     return height, weight, gender
 

@@ -23,5 +23,7 @@ def build_poly(x, degree):
     # polynomial basis function: TODO
     # this function should return the matrix formed
     # by applying the polynomial basis to the input data
-    # ***************************************************
-    raise NotImplementedError
+    power = np.arange(degree+1)
+    x = np.tile(x,(degree+1,1)).T
+    poly = np.power(x,power)
+    return poly
